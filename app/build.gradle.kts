@@ -33,6 +33,11 @@ android {
 }
 
 dependencies {
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
     implementation(libs.androidx.activity.ktx)
