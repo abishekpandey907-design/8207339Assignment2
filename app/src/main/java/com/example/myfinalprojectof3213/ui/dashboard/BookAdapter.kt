@@ -63,7 +63,11 @@ class BookAdapter(
             val year = book.publicationYear?.toString()
                 ?: "Unknown year"
 
-            metadataText.text = "$genre · $year"
+            metadataText.text = itemView.context.getString(
+                R.string.book_metadata,
+                genre,
+                year
+            )
 
             coverImage.setImageResource(
                 getBookCover(book.title)
@@ -90,7 +94,7 @@ class BookAdapter(
                 "pride and prejudice" ->
                     R.drawable.cover_pride_prejudice
 
-                "the great gatsby" ->
+                "the great Gatsby" ->
                     R.drawable.cover_great_gatsby
 
                 "one hundred years of solitude" ->

@@ -1,3 +1,8 @@
 <resources>
+    <string name="book_metadata">%1$s · %2$s</string>
     <string name="app_name">MyFinalProjectof3213</string>
+    <string name="retry">Retry</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="description">Description</string>
+    <string name="back_to_books">Back to books</string>
 </resources>

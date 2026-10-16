@@ -18,7 +18,7 @@ class LoginRepositoryTest {
 
     @Test
     fun `successful login returns keypass and sends credentials`() =
-        runBlocking<Unit> {
+        runBlocking {
             var capturedRequest: LoginRequest? = null
 
             val api = FakeApiService { request ->
@@ -43,9 +43,9 @@ class LoginRepositoryTest {
 
     @Test
     fun `unauthorized login throws rejection message`() =
-        runBlocking<Unit> {
+        runBlocking {
             val api = FakeApiService {
-                Response.error<LoginResponse>(
+                Response.error(
                     401,
                     """{"message":"Unauthorized"}""".toResponseBody()
                 )
@@ -70,7 +70,7 @@ class LoginRepositoryTest {
 
     @Test
     fun `blank keypass throws empty login key message`() =
-        runBlocking<Unit> {
+        runBlocking {
             val api = FakeApiService {
                 Response.success(
                     LoginResponse(keypass = "")
@@ -96,7 +96,7 @@ class LoginRepositoryTest {
 
     @Test
     fun `network failure is propagated`() =
-        runBlocking<Unit> {
+        runBlocking {
             val networkError = IOException("No internet connection")
 
             val api = FakeApiService {
