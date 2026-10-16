@@ -94,7 +94,7 @@ class BookAdapter(
                 "pride and prejudice" ->
                     R.drawable.cover_pride_prejudice
 
-                "the great Gatsby" ->
+                "the great gatsby" ->
                     R.drawable.cover_great_gatsby
 
                 "one hundred years of solitude" ->
