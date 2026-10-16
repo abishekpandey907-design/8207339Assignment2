@@ -3,34 +3,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="?attr/selectableItemBackground"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_book_row"
+    android:stateListAnimator="@animator/book_hover_animator"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="16dp">
 
-    <TextView
-        android:id="@+id/tvBookTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:text="To Kill a Mockingbird" />
+    <ImageView
+        android:id="@+id/ivBookCover"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="16dp"
+        android:background="#EEEFF3"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/cover_mockingbird" />
 
-    <TextView
-        android:id="@+id/tvBookAuthor"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textSize="16sp"
-        tools:text="Harper Lee" />
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvBookMetadata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textSize="14sp"
-        tools:text="Fiction · 1960" />
+        <TextView
+            android:id="@+id/tvBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#172238"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="To Kill a Mockingbird" />
+
+        <TextView
+            android:id="@+id/tvBookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#4F5C70"
+            android:textSize="15sp"
+            tools:text="Harper Lee" />
+
+        <TextView
+            android:id="@+id/tvBookMetadata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#667085"
+            android:textSize="13sp"
+            tools:text="Fiction · 1960" />
+
+    </LinearLayout>
 
 </LinearLayout>

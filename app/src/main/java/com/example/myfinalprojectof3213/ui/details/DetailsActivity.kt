@@ -2,12 +2,14 @@ package com.example.myfinalprojectof3213.ui.details
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myfinalprojectof3213.R
+import java.util.Locale
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -59,14 +61,59 @@ class DetailsActivity : AppCompatActivity() {
         val description = intent.getStringExtra(EXTRA_DESCRIPTION)
             ?: "No description available."
 
-        findViewById<TextView>(R.id.tvDetailsTitle).text = title
-        findViewById<TextView>(R.id.tvDetailsAuthor).text = "Author: $author"
-        findViewById<TextView>(R.id.tvDetailsGenre).text = "Genre: $genre"
-        findViewById<TextView>(R.id.tvDetailsYear).text = "Published: $year"
-        findViewById<TextView>(R.id.tvDetailsDescription).text = description
+        findViewById<ImageView>(R.id.ivDetailsCover)
+            .setImageResource(getBookCover(title))
 
-        findViewById<Button>(R.id.btnBackToDashboard).setOnClickListener {
-            finish()
+        findViewById<TextView>(R.id.tvDetailsTitle).text = title
+
+        findViewById<TextView>(R.id.tvDetailsAuthor).text =
+            "Author: $author"
+
+        findViewById<TextView>(R.id.tvDetailsGenre).text =
+            "Genre: $genre"
+
+        findViewById<TextView>(R.id.tvDetailsYear).text =
+            "Published: $year"
+
+        findViewById<TextView>(R.id.tvDetailsDescription).text =
+            description
+
+        findViewById<Button>(R.id.btnBackToDashboard)
+            .setOnClickListener {
+                finish()
+            }
+    }
+
+    private fun getBookCover(title: String?): Int {
+        val normalizedTitle = title
+            .orEmpty()
+            .trim()
+            .lowercase(Locale.ROOT)
+
+        return when (normalizedTitle) {
+            "to kill a mockingbird" ->
+                R.drawable.cover_mockingbird
+
+            "1984" ->
+                R.drawable.cover_1984
+
+            "pride and prejudice" ->
+                R.drawable.cover_pride_prejudice
+
+            "the great gatsby" ->
+                R.drawable.cover_great_gatsby
+
+            "one hundred years of solitude" ->
+                R.drawable.cover_hundred_years
+
+            "the catcher in the rye" ->
+                R.drawable.cover_catcher_rye
+
+            "the hobbit" ->
+                R.drawable.cover_hobbit
+
+            else ->
+                R.drawable.ic_book
         }
     }
 }

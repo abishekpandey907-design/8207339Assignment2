@@ -4,6 +4,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F6FA"
+    android:clipToPadding="false"
     android:fillViewport="true"
     tools:context=".ui.details.DetailsActivity">
 
@@ -17,13 +19,26 @@
             android:id="@+id/btnBackToDashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:text="Back to books"
-            android:layout_marginBottom="24dp" />
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/ivDetailsCover"
+            android:layout_width="180dp"
+            android:layout_height="270dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="28dp"
+            android:background="#EEEFF3"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/cover_mockingbird" />
 
         <TextView
             android:id="@+id/tvDetailsTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#172238"
             android:textSize="28sp"
             android:textStyle="bold"
             tools:text="To Kill a Mockingbird" />
@@ -33,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:textColor="#4F5C70"
             android:textSize="18sp"
             tools:text="Author: Harper Lee" />
 
@@ -41,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textColor="#4F5C70"
             android:textSize="16sp"
             tools:text="Genre: Fiction" />
 
@@ -49,14 +66,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textColor="#4F5C70"
             android:textSize="16sp"
             tools:text="Published: 1960" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:text="Description"
+            android:textColor="#172238"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -64,9 +83,10 @@
             android:id="@+id/tvDetailsDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="#4F5C70"
             android:textSize="16sp"
-            android:lineSpacingExtra="4dp"
             tools:text="The selected book's full description appears here." />
 
     </LinearLayout>

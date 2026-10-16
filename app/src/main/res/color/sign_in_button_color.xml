@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Disabled while signing in -->
+    <item
+        android:state_enabled="false"
+        android:color="#9CA3AF" />
+
+    <!-- Pressed -->
+    <item
+        android:state_pressed="true"
+        android:color="#843018" />
+
+    <!-- Mouse hovering -->
+    <item
+        android:state_hovered="true"
+        android:color="#172238" />
+
+    <!-- Keyboard focus -->
+    <item
+        android:state_focused="true"
+        android:color="#172238" />
+
+    <!-- Normal orange background -->
+    <item android:color="#C44722" />
+
+</selector>

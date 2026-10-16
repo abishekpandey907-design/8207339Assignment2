@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Finger or mouse button pressed -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFE5D8" />
+            <corners android:radius="18dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#C44722" />
+        </shape>
+    </item>
+
+    <!-- Mouse or supported pointer hovering -->
+    <item android:state_hovered="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFF2EB" />
+            <corners android:radius="18dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#C44722" />
+        </shape>
+    </item>
+
+    <!-- Keyboard navigation focus -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFF2EB" />
+            <corners android:radius="18dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#C44722" />
+        </shape>
+    </item>
+
+    <!-- Normal appearance -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="18dp" />
+            <stroke
+                android:width="1dp"
+                android:color="#E4E7EC" />
+        </shape>
+    </item>
+
+</selector>

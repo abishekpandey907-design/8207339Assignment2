@@ -1,91 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F6FA"
+    android:clipToPadding="false"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center_vertical"
-        android:padding="24dp">
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="32dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Student Login"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter your student ID and first name."
-            android:gravity="center"
-            android:layout_marginBottom="24dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:labelFor="@id/etStudentId"
-            android:text="Student ID (without s)" />
-
-        <EditText
-            android:id="@+id/etStudentId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:inputType="number"
-            android:singleLine="true"
-            android:imeOptions="actionNext"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:labelFor="@id/etFirstName"
-            android:text="First name (case-sensitive)" />
-
-        <EditText
-            android:id="@+id/etFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:imeOptions="actionDone"
-            android:layout_marginBottom="24dp" />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Log in" />
-
-        <ProgressBar
-            android:id="@+id/progressLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="88dp"
+            android:layout_height="88dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:visibility="gone" />
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_book_icon"
+            android:importantForAccessibility="no"
+            android:padding="22dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_book" />
 
         <TextView
-            android:id="@+id/tvLoginError"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="#B00020"
-            android:accessibilityLiveRegion="polite"
-            android:visibility="gone"
-            tools:text="Unable to log in. Please try again."
-            tools:visibility="visible" />
+            android:gravity="center"
+            android:letterSpacing="0.12"
+            android:text="YOUR BOOK COLLECTION"
+            android:textColor="#B8401E"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Welcome back"
+            android:textColor="#172238"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Your next great read starts here.\nSign in to explore your collection."
+            android:textColor="#5F6B7C"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login_card"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student login"
+                android:textColor="#172238"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:text="Enter your details to continue."
+                android:textColor="#5F6B7C"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/etStudentId"
+                android:text="Student ID"
+                android:textColor="#253249"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etStudentId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_login_input"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="12dp"
+                android:hint="Enter your student ID"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:minHeight="56dp"
+                android:paddingStart="16dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="14dp"
+                android:singleLine="true"
+                android:textColor="#172238"
+                android:textColorHint="#667085"
+                android:textSize="16sp"
+                app:backgroundTint="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="20dp"
+                android:text="Use your student ID without the “s”."
+                android:textColor="#5F6B7C"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/etFirstName"
+                android:text="First name"
+                android:textColor="#253249"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_login_input"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="12dp"
+                android:hint="Enter your first name"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:minHeight="56dp"
+                android:paddingStart="16dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="14dp"
+                android:singleLine="true"
+                android:textColor="#172238"
+                android:textColorHint="#667085"
+                android:textSize="16sp"
+                app:backgroundTint="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Your first name is case-sensitive."
+                android:textColor="#5F6B7C"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvLoginError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:accessibilityLiveRegion="polite"
+                android:background="@drawable/bg_login_error"
+                android:padding="14dp"
+                android:textColor="#A51D32"
+                android:textSize="14sp"
+                android:visibility="gone"
+                tools:text="Unable to log in. Please check your details." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="56dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:text="Sign in"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/sign_in_button_color"
+                app:cornerRadius="14dp" />
+
+            <ProgressBar
+                android:id="@+id/progressLogin"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:contentDescription="Signing in"
+                android:indeterminateTint="#C44722"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Browse books. Discover something new."
+            android:textColor="#5F6B7C"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
